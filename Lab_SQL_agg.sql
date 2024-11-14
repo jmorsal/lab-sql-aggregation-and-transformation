@@ -1,12 +1,14 @@
 USE sakila;
 -- Challenge 1
 -- 1
+-- 1.1
 SELECT 
     MIN(length) AS min_duration, 
     MAX(length) AS max_duration
 FROM 
     film;
-    
+
+-- 1.2
 SELECT 
     FLOOR(AVG(length) / 60) AS average_hours,
     ROUND(AVG(length) % 60) AS average_minutes
@@ -14,12 +16,13 @@ FROM
     film;
     
 -- 2
+-- 2.1
 SELECT 
     DATEDIFF(MAX(rental_date), MIN(rental_date)) AS days_operating
 FROM 
     rental;
 
-
+-- 2.2
 SELECT 
     rental_id,
     inventory_id,
@@ -32,6 +35,7 @@ FROM
     rental
 LIMIT 20;
 
+-- 2.3
 SELECT 
     rental_id,
     rental_date,
